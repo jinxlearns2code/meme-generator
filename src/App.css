@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  color: white;
+  padding: 20px;
+}
+
+.header--logo {
+  height: 100%;
+}
+
+.header--project {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: .75rem;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+
+.form--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  margin: 36px 36px 0px 36px;
+}
+
+.form > input {
+  width: 230px;
+  height: 35px;
+  border: 1px solid #D5D4D8;
+  border-radius: 5px;
+  margin: 0px 9px;
+}
+
+button {
+  margin-top: 15px;
+  width: 478px;
+  height: 40px;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 19px;
+  letter-spacing: -0.08rem;
+  color: #FFFFFF;
+}
+
+.image-icon {
+  color: rgb(255, 255, 65);
+  margin-left: 2px;
+}
