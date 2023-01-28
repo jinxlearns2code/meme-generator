@@ -5,12 +5,12 @@ import { faImage } from '@fortawesome/free-solid-svg-icons'
 
 export default function Meme() {
 	return (
-		<div className="form--container">
-			<form action="submit" className="form">
-				<input type="text" />
-				<input type="text" />
-			</form>
+		<main className="form--container">
+			<div action="submit" className="form">
+				<input type="text" placeholder="Top text" />
+				<input type="text" placeholder="Bottom text" />
+			</div>
 			<button>Get a new meme image <FontAwesomeIcon icon={faImage} className="image-icon" /></button>
-		</div>
+		</main>
 	)
 }
