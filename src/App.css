@@ -57,7 +57,7 @@ header {
   padding: 10px;
 }
 
-button {
+.form--button {
   margin-top: 15px;
   width: 478px;
   height: 40px;
@@ -75,4 +75,9 @@ button {
 .image-icon {
   color: rgb(255, 255, 65);
   margin-left: 2px;
+}
+
+.form--image {
+  margin-top: 52px;
+  max-width: 477px;
 }
