@@ -5,12 +5,22 @@ import memesData from "../memesData.js"
 
 
 export default function Meme() {
-	const [memeImage, setMemeImage] = React.useState("")
+	const [memeImage, setMemeImage] = React.useState({
+		topText: "",
+		bottomText: "",
+		randomImage: "images/white-img.png"
+	})
+
+	const [allMemeImages, setAllMemeImages] = React.useState(memesData)
     
     function getMemeImage() {
-        const memesArray = memesData.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        setMemeImage(memesArray[randomNumber].url )
+        const memesArray = allMemeImages.data.memes
+		const randomNumber = Math.floor(Math.random() * memesArray.length)
+		const url = memesArray[randomNumber].url
+		setMemeImage(prevMemeImage => ({
+			...prevMemeImage,
+			randomImage: url
+		}))
     }
 
 	return (
@@ -27,7 +37,7 @@ export default function Meme() {
 				<FontAwesomeIcon icon={faImage} className="image-icon" />
 			</button>
 			
-			<img src={memeImage} alt="meme-image" className="form--image" />
+			<img src={memeImage.randomImage} alt="meme-image" className="form--image" />
 		</main>
 	)
 }
