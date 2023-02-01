@@ -21,13 +21,38 @@ export default function Meme() {
 			...prevMemeImage,
 			randomImage: url
 		}))
-    }
+	}
+	
+	const [formData, setFormData] = React.useState({
+		topText: "", bottomText: ""
+	})
+
+	function handleChange(event) {
+		setDataForm(prevFormData => {
+			return {
+				...prevFormData,
+				[event.target.name]: event.target.value
+			}
+		})
+	}
 
 	return (
 		<main className="form--container">
 			<div action="submit" className="form">
-				<input type="text" placeholder="Top text" />
-				<input type="text" placeholder="Bottom text" />
+				<input
+					type="text"
+					placeholder="Top text"
+					name="topText"
+					value="formData.topText"
+					onChange={handleClick}
+				/>
+				<input
+					type="text"
+					placeholder="Bottom text"
+					name="bottomText"
+					value="formData.bottomText"
+					onChange={handleClick}
+				/>
 			</div>
 			<button
 				className="form--button"
@@ -38,6 +63,7 @@ export default function Meme() {
 			</button>
 			
 			<img src={memeImage.randomImage} alt="meme-image" className="form--image" />
+
 		</main>
 	)
 }
