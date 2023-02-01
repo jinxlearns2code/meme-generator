@@ -43,15 +43,15 @@ export default function Meme() {
 					type="text"
 					placeholder="Top text"
 					name="topText"
-					value="formData.topText"
-					onChange={handleClick}
+					value={formData.topText}
+					onChange={handleChange}
 				/>
 				<input
 					type="text"
 					placeholder="Bottom text"
 					name="bottomText"
-					value="formData.bottomText"
-					onChange={handleClick}
+					value={formData.bottomText}
+					onChange={handleChange}
 				/>
 			</div>
 			<button
