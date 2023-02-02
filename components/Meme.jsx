@@ -24,13 +24,11 @@ export default function Meme() {
 	}
 
 	function handleChange(event) {
-		setDataForm(prevMemeImage => {
-			const { name, value } = event.target
-			return {
+		const { name, value } = event.target
+		setMemeImage(prevMemeImage => ({
 				...prevMemeImage,
 				[name]: value
-			}
-		})
+		}))
 	}
 
 	function handleSubmit(event) {
@@ -40,7 +38,7 @@ export default function Meme() {
 	return (
 		<main>
 			<div className="form--container">
-			<div action="submit" className="form">
+			<div onSubmit={handleSubmit} className="form">
 				<input
 					type="text"
 					placeholder="Top text"
@@ -66,11 +64,10 @@ export default function Meme() {
 			</div>
 			<div className="meme">
 				<img src={memeImage.randomImage} alt="meme-image" className="form--image" />
-                <h2 className="meme--text top">One does not simply</h2>
-                <h2 className="meme--text bottom">Walk into Mordor</h2>
+                <h2 className="meme--text top">{memeImage.topText}</h2>
+                <h2 className="meme--text bottom">{memeImage.bottomText}</h2>
             </div>
-			
-
 		</main>
 	)
 }
+
