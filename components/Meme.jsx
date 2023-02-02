@@ -22,35 +22,37 @@ export default function Meme() {
 			randomImage: url
 		}))
 	}
-	
-	const [formData, setFormData] = React.useState({
-		topText: "", bottomText: ""
-	})
 
 	function handleChange(event) {
-		setDataForm(prevFormData => {
+		setDataForm(prevMemeImage => {
+			const { name, value } = event.target
 			return {
-				...prevFormData,
-				[event.target.name]: event.target.value
+				...prevMemeImage,
+				[name]: value
 			}
 		})
 	}
 
+	function handleSubmit(event) {
+		event.preventDefault()
+	}
+
 	return (
-		<main className="form--container">
+		<main>
+			<div className="form--container">
 			<div action="submit" className="form">
 				<input
 					type="text"
 					placeholder="Top text"
 					name="topText"
-					value={formData.topText}
+					value={memeImage.topText}
 					onChange={handleChange}
 				/>
 				<input
 					type="text"
 					placeholder="Bottom text"
 					name="bottomText"
-					value={formData.bottomText}
+					value={memeImage.bottomText}
 					onChange={handleChange}
 				/>
 			</div>
@@ -61,8 +63,13 @@ export default function Meme() {
 				Get a new meme image
 				<FontAwesomeIcon icon={faImage} className="image-icon" />
 			</button>
+			</div>
+			<div className="meme">
+				<img src={memeImage.randomImage} alt="meme-image" className="form--image" />
+                <h2 className="meme--text top">One does not simply</h2>
+                <h2 className="meme--text bottom">Walk into Mordor</h2>
+            </div>
 			
-			<img src={memeImage.randomImage} alt="meme-image" className="form--image" />
 
 		</main>
 	)
