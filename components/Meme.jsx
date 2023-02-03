@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage } from '@fortawesome/free-solid-svg-icons'
 import memesData from "../memesData.js"
 
 
 export default function Meme() {
-	const [memeImage, setMemeImage] = React.useState({
+	const [memeImage, setMemeImage] = useState({
 		topText: "",
 		bottomText: "",
 		randomImage: "images/white-img.png"
@@ -34,6 +34,10 @@ export default function Meme() {
 	function handleSubmit(event) {
 		event.preventDefault()
 	}
+
+	useEffect(() => {
+		console.log("test useEffect")
+	}, [])
 
 	return (
 		<main>
